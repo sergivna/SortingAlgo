@@ -9,3 +9,6 @@ C:\Users\Julia\source\repos\SortingAlgo\SortingAlgo\obj\Debug\netcoreapp3.0\Sort
 C:\Users\Julia\source\repos\SortingAlgo\SortingAlgo\obj\Debug\netcoreapp3.0\SortingAlgo.AssemblyInfo.cs
 C:\Users\Julia\source\repos\SortingAlgo\SortingAlgo\obj\Debug\netcoreapp3.0\SortingAlgo.dll
 C:\Users\Julia\source\repos\SortingAlgo\SortingAlgo\obj\Debug\netcoreapp3.0\SortingAlgo.pdb
+C:\Users\Julia\source\repos\SortingAlgo\SortingAlgo\bin\Debug\netcoreapp3.0\Algorithms.dll
+C:\Users\Julia\source\repos\SortingAlgo\SortingAlgo\bin\Debug\netcoreapp3.0\Algorithms.pdb
+C:\Users\Julia\source\repos\SortingAlgo\SortingAlgo\obj\Debug\netcoreapp3.0\SortingAlgo.csproj.CopyComplete

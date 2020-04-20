@@ -1,11 +1,30 @@
 {
   "version": 3,
   "targets": {
-    ".NETCoreApp,Version=v3.0": {}
+    ".NETCoreApp,Version=v3.0": {
+      "Algorithms/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.0",
+        "compile": {
+          "bin/placeholder/Algorithms.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Algorithms.dll": {}
+        }
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "Algorithms/1.0.0": {
+      "type": "project",
+      "path": "../Algorithms/Algorithms.csproj",
+      "msbuildProject": "../Algorithms/Algorithms.csproj"
+    }
+  },
   "projectFileDependencyGroups": {
-    ".NETCoreApp,Version=v3.0": []
+    ".NETCoreApp,Version=v3.0": [
+      "Algorithms >= 1.0.0"
+    ]
   },
   "packageFolders": {
     "C:\\Users\\Julia\\.nuget\\packages\\": {},
@@ -36,7 +55,11 @@
       },
       "frameworks": {
         "netcoreapp3.0": {
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\Julia\\source\\repos\\SortingAlgo\\Algorithms\\Algorithms.csproj": {
+              "projectPath": "C:\\Users\\Julia\\source\\repos\\SortingAlgo\\Algorithms\\Algorithms.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

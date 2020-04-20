@@ -1,0 +1,8 @@
+C:\Users\Julia\source\repos\SortingAlgo\Algorithms\bin\Debug\netcoreapp3.0\Algorithms.deps.json
+C:\Users\Julia\source\repos\SortingAlgo\Algorithms\bin\Debug\netcoreapp3.0\Algorithms.dll
+C:\Users\Julia\source\repos\SortingAlgo\Algorithms\bin\Debug\netcoreapp3.0\Algorithms.pdb
+C:\Users\Julia\source\repos\SortingAlgo\Algorithms\obj\Debug\netcoreapp3.0\Algorithms.csprojAssemblyReference.cache
+C:\Users\Julia\source\repos\SortingAlgo\Algorithms\obj\Debug\netcoreapp3.0\Algorithms.AssemblyInfoInputs.cache
+C:\Users\Julia\source\repos\SortingAlgo\Algorithms\obj\Debug\netcoreapp3.0\Algorithms.AssemblyInfo.cs
+C:\Users\Julia\source\repos\SortingAlgo\Algorithms\obj\Debug\netcoreapp3.0\Algorithms.dll
+C:\Users\Julia\source\repos\SortingAlgo\Algorithms\obj\Debug\netcoreapp3.0\Algorithms.pdb

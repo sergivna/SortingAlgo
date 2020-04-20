@@ -6,14 +6,6 @@
   "compilationOptions": {},
   "targets": {
     ".NETCoreApp,Version=v3.0": {
-      "SortingAlgo/1.0.0": {
-        "dependencies": {
-          "Algorithms": "1.0.0"
-        },
-        "runtime": {
-          "SortingAlgo.dll": {}
-        }
-      },
       "Algorithms/1.0.0": {
         "runtime": {
           "Algorithms.dll": {}
@@ -22,11 +14,6 @@
     }
   },
   "libraries": {
-    "SortingAlgo/1.0.0": {
-      "type": "project",
-      "serviceable": false,
-      "sha512": ""
-    },
     "Algorithms/1.0.0": {
       "type": "project",
       "serviceable": false,
