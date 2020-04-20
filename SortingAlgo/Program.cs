@@ -8,22 +8,21 @@ namespace SortingAlgo
     {
         static void Main(string[] args)
         {
-            List<long> ls = new List<long>();
-            for (int i = 0; i < 1000000; i++)
-            {
-                ls.Add(3000000000);
-            }
+            List<long> ls = new List<long>(new long[] { 1, 2, 3, 4, 4, 2 });
+    
 
             SortContext sortContext = new SortContext();
             List<IAlgorithm> algorithms = new List<IAlgorithm>() 
                                                 {new StableSort(),
                                                  new BucketSort() };
 
-            foreach (var algo in algorithms)
-            {
-                algo.Sort();
-            }
+            StableSort stableSort = new StableSort();
+            var res = stableSort.Sort(ls);
 
+            foreach (var item in res)
+            {
+                Console.WriteLine(item);
+            }
 
             Console.WriteLine("Hello World!");
             Console.ReadKey();

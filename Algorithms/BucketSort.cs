@@ -6,9 +6,10 @@ namespace Algorithms
 {
    public class BucketSort : IAlgorithm
     {
-        public void Sort()
+        public List<long> Sort(List<long> list)
         {
             Console.WriteLine("BucketSort");
+            return list;
         }
     }
 }

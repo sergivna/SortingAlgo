@@ -33,7 +33,7 @@ namespace Algorithms
             if (algorithm == null)
                 throw new ArgumentNullException();
 
-            algorithm.Sort();
+            algorithm.Sort(null);
         }
     }
 }

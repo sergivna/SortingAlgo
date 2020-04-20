@@ -6,6 +6,6 @@ namespace Algorithms
 {
     public interface IAlgorithm
     {
-        void Sort();
+        List<long> Sort(List<long> ls);
     }
 }
