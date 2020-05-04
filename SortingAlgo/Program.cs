@@ -18,7 +18,8 @@ namespace SortingAlgo
 
             StableSort stableSort = new StableSort();
             BucketSort bucketSort = new BucketSort();
-            var res = bucketSort.Sort(ls);
+            TournamentSort tournamentSort = new TournamentSort();
+            var res = tournamentSort.Sort(ls);
 
             foreach (var item in res)
             {
