@@ -19,14 +19,15 @@ namespace SortingAlgo
             StableSort stableSort = new StableSort();
             BucketSort bucketSort = new BucketSort();
             TournamentSort tournamentSort = new TournamentSort();
-            var res = tournamentSort.Sort(ls);
+            IntroSorting introSorting = new IntroSorting();
+            QuickSort sorting = new QuickSort();
+            var res = sorting.Sort(ls);
 
             foreach (var item in res)
             {
                 Console.WriteLine(item);
             }
 
-            Console.WriteLine("Hello World!");
             Console.ReadKey();
         }
     }
