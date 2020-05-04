@@ -8,7 +8,7 @@ namespace SortingAlgo
     {
         static void Main(string[] args)
         {
-            List<long> ls = new List<long>(new long[] { 1, 2, 3, 4, 4, 2 });
+            List<long> ls = new List<long>(new long[] {  2, 3, 4, 4, 2, 8, 10, 0 });
     
 
             SortContext sortContext = new SortContext();
@@ -17,7 +17,8 @@ namespace SortingAlgo
                                                  new BucketSort() };
 
             StableSort stableSort = new StableSort();
-            var res = stableSort.Sort(ls);
+            BucketSort bucketSort = new BucketSort();
+            var res = bucketSort.Sort(ls);
 
             foreach (var item in res)
             {
