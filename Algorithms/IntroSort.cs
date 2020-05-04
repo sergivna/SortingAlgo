@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Algorithms
 {
-    public class IntroSorting
+    public class IntroSort
     {
         /// <summary>
         /// Массив с данными

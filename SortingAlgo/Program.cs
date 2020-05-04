@@ -19,9 +19,10 @@ namespace SortingAlgo
             StableSort stableSort = new StableSort();
             BucketSort bucketSort = new BucketSort();
             TournamentSort tournamentSort = new TournamentSort();
-            IntroSorting introSorting = new IntroSorting();
+            IntroSort introSorting = new IntroSort();
             QuickSort sorting = new QuickSort();
-            var res = sorting.Sort(ls);
+            FranceschiniSort franceschiniSort = new FranceschiniSort();
+            var res = franceschiniSort.Sort(ls);
 
             foreach (var item in res)
             {
