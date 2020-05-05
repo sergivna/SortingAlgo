@@ -1,4 +1,5 @@
 ﻿using Algorithms;
+using RandomData;
 using System;
 using System.Collections.Generic;
 
@@ -9,7 +10,8 @@ namespace SortingAlgo
         static void Main(string[] args)
         {
             List<long> ls = new List<long>(new long[] {  2, 3, 4, 4, 2, 8, 10, 0 });
-    
+            Rand rand = new Rand();
+            rand.GetData();
 
             SortContext sortContext = new SortContext();
             List<IAlgorithm> algorithms = new List<IAlgorithm>() 
