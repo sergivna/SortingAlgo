@@ -29,19 +29,23 @@ namespace RandomData
             FillUniform(list30k, 30000, (long)Math.Pow(2, 31));
             FillUniform(list30k, 30000);
             FillUniform(list30k, 30000, (long)Math.Pow(2, 15));
+            FillNormal(list30k, 30000, (long)Math.Pow(2, 31));
            
 
             FillUniform(list100k, 100000, (long)Math.Pow(2, 31));
             FillUniform(list100k, 100000);
             FillUniform(list100k, 100000, (long)Math.Pow(2, 15));
+            FillNormal(list100k, 100000, (long)Math.Pow(2, 31));
 
             FillUniform(list300k, 300000, (long)Math.Pow(2, 31));
             FillUniform(list300k, 300000);
             FillUniform(list300k, 300000, (long)Math.Pow(2, 15));
+            FillNormal(list300k, 300000, (long)Math.Pow(2, 31));
 
             FillUniform(list1m, 1000000, (long)Math.Pow(2, 31));
             FillUniform(list1m, 1000000);
             FillUniform(list1m, 1000000, (long)Math.Pow(2, 15));
+            FillNormal(list1m, 1000000, (long)Math.Pow(2, 31));
 
             result.Add(list30k);
             result.Add(list100k);
@@ -72,7 +76,7 @@ namespace RandomData
 
                     for (int j = 0; j < N; j++)
                     {
-                        next = random.Next() * end;
+                        next = (int)(random.NextDouble() * end);
                         ls.Add(next);
                     }
 
@@ -81,6 +85,31 @@ namespace RandomData
             
             
         }
-        
+
+        private void FillNormal(List<List<long>> list, long N, long end = -1)
+        {
+            List<long> ls = new List<long>();//1 - 30 тис 
+            NormalRandom random = new NormalRandom();
+
+            if (end == -1)
+                end = N - 1;
+            long next = 0;
+
+            for (int i = 0; i < 5; i++)
+            {
+                ls.Clear();
+
+                for (int j = 0; j < N; j++)
+                {
+                    next = (long)(random.NextGaussian());
+                    ls.Add(next);
+                }
+
+                list.Add(ls);
+            }
+
+
+        }
+
     }
 }
