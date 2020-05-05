@@ -10,16 +10,12 @@ namespace RandomData
         private List<List<long>> list300k;
         private List<List<long>> list1m;
 
-        private List<long> range;
-
         public Rand()
         {
-            list30k = new List<List<long>>(20);
-            list100k = new List<List<long>>(20);
-            list300k = new List<List<long>>(20);
-            list1m = new List<List<long>>(20);
-
-            range = new List<long>();
+            list30k = new List<List<long>>();
+            list100k = new List<List<long>>();
+            list300k = new List<List<long>>();
+            list1m = new List<List<long>>();
         }
 
         public List<List<List<long>>> GetData(){
@@ -59,16 +55,12 @@ namespace RandomData
 
         private void FillUniform(List<List<long>> list, long N, long end = -1)
         {
-            List<long> ls = new List<long>();//1 - 30 тис 
+            List<long> ls = new List<long>();
             Random random = new Random();
 
             if (end == -1)
                 end = N - 1;
             long next = 0;
-            //long start = 0;
-            //long end = (long)Math.Pow(2, 31);
-            //long dif = end - start;
-
 
                 for (int i = 0; i < 5; i++)
                 {
@@ -76,7 +68,7 @@ namespace RandomData
 
                     for (int j = 0; j < N; j++)
                     {
-                        next = (int)(random.NextDouble() * end);
+                        next = (long)(random.NextDouble() * end);
                         ls.Add(next);
                     }
 
@@ -88,7 +80,7 @@ namespace RandomData
 
         private void FillNormal(List<List<long>> list, long N, long end = -1)
         {
-            List<long> ls = new List<long>();//1 - 30 тис 
+            List<long> ls = new List<long>();
             NormalRandom random = new NormalRandom();
 
             if (end == -1)
