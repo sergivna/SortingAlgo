@@ -2,6 +2,7 @@
 using RandomData;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 
 namespace SortingAlgo
@@ -12,47 +13,59 @@ namespace SortingAlgo
         {
            // List<long> ls = new List<long>(new long[] {  2, 3, 4, 4, 2, 8, 10, 0 });
             Rand rand = new Rand();
-            List<List<List<long>>> data = rand.GetData();
+          //  List<List<List<long>>> data = rand.GetData();
             List<List<long>> times  = new List<List<long>>(4);
 
             SortContext sortContext = new SortContext();
+            Dictionary<string, TimeSpan> keyValues = new Dictionary<string, TimeSpan>();
 
-            List<IAlgorithm> algorithms = new List<IAlgorithm>() 
+            List<IAlgorithm> algorithms = new List<IAlgorithm>()
                                                 {
-                                                 new FranceschiniSort(),
-                                                 new StableSort(),
-                                                 new BucketSort(),
                                                  new TournamentSort(),
-                                                 new IntroSort(),
-                                                 new QuickSort()};
+                                                 new BucketSort(),
+                                                 new FranceschiniSort()};
+                                                 //new StableSort(),
+                                                 //new IntroSort(),
+                                                 //new QuickSort()};
 
-
+            Stopwatch clock = new Stopwatch();
             //StableSort stableSort = new StableSort();
             //BucketSort bucketSort = new BucketSort();
             //TournamentSort tournamentSort = new TournamentSort();
             //IntroSort introSorting = new IntroSort();
             //QuickSort sorting = new QuickSort();
             //FranceschiniSort franceschiniSort = new FranceschiniSort();
-
+            int i = 0;
+            TimeSpan time = new TimeSpan(0);
             foreach (var algo in algorithms)
             {
+                List<List<List<long>>> data = rand.GetData();
+
                 foreach (var listsByCount in data)
                 {
-                    foreach (var list in listsByCount)
+                    for (int j = 0; j < listsByCount.Count; j++)
                     {
-                        var res = algo.Sort(list);
+                        clock.Start();
+                        var res = algo.Sort(listsByCount[j]);
+                        clock.Stop();
 
+                        time += clock.Elapsed;
+                        Console.WriteLine(  " hh" + clock.Elapsed);
+                        clock.Reset();
                     }
                     //var result = res.GroupBy(s => s).Select(g => new { Count = g.Count(), Str = g.Key }).OrderByDescending(a => a.Count).ToList();
+                    Console.WriteLine("hdfh" + time);
+                    keyValues.Add(algo.Name + listsByCount.Count.ToString() + (++i).ToString() , time / 5);
+                    time = TimeSpan.Zero;
                 }
             }
 
             // var res = franceschiniSort.Sort(ls);
 
-            //foreach (var item in res)
-            //{
-            //    Console.WriteLine(item);
-            //}
+            foreach (var item in keyValues)
+            {
+                Console.WriteLine(item.Key + " " + item.Value);
+            }
 
             Console.ReadKey();
         }

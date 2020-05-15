@@ -7,6 +7,8 @@ namespace Algorithms
 {
     public class QuickSort: IAlgorithm
     {
+        public string Name { get; } = "QuickSort";
+
         public List<long> Sort(List<long> list)
         {
             SortRecur(list, 0, list.Count-1);

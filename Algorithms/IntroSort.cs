@@ -7,6 +7,8 @@ namespace Algorithms
 {
     public class IntroSort: IAlgorithm
     {
+        public string Name { get; } = "IntroSort";
+
         public long[] Array { get; set; }
 
         public void BinarySorting()

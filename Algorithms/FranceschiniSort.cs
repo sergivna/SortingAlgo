@@ -1,52 +1,54 @@
-﻿using System;
+﻿// C# implementation of Radix Sort 
+using Algorithms;
+using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 
-namespace Algorithms
+public class FranceschiniSort : IAlgorithm
 {
-   public  class FranceschiniSort: IAlgorithm
+    public string Name { get; } = "FranceschiniSort";
+    public static void countSort(List<long> list, int exp)
     {
-        public List<long> Sort(List<long> list)
+        List<long> output = new List<long>();
+        for (int j = 0; j < list.Count; j++)
+            output.Add(0);
+
+        int i;
+        int[] count = new int[10];
+
+
+        for (i = 0; i < 10; i++)
+            count[i] = 0;
+
+        for (i = 0; i < list.Count; i++)
         {
-            var max = list.Max();
-            for (int exp = 1; max / exp > 0; exp *= 10)
-            {
-                CountingSort(list, list.Count, exp);
-            }
-
-            return list;
+            var tmp = Math.Abs((list[i] / exp) % 10);
+            count[tmp]++;
         }
-        public void CountingSort(List<long> list, int length, int exponent)
+
+        for (i = 1; i < 10; i++)
+            count[i] += count[i - 1];
+
+        for (i = list.Count - 1; i >= 0; i--)
         {
-            long[] output = new long[length];
-            int i;
-
-            int[] count = new int[10];
-            for (i = 0; i < 10; i++)
-            {
-                count[i] = 0;
-            }
-            for (i = 0; i < length; i++)
-            {
-                count[(list[i] / exponent) % 10]++;
-            }
-
-            for (i = 1; i < 10; i++)
-            {
-                count[i] += count[i - 1];
-            }
-
-            for (i = length - 1; i >= 0; i--)
-            {
-                output[count[(list[i] / exponent) % 10] - 1] = list[i];
-                count[(list[i] / exponent) % 10]--;
-            }
-
-            for (i = 0; i < length; i++)
-            {
-                list[i] = output[i];
-            }
+            var temp = Math.Abs((list[i] / exp) % 10);
+            output[count[temp] - 1] = list[i];
+            count[temp]--;
         }
+
+        for (i = 0; i < list.Count; i++)
+            list[i] = output[i];
     }
+
+
+    public List<long> Sort(List<long> list)
+    {
+        long m = list.Max();
+
+        for (int exp = 1; m / exp > 0; exp *= 10)
+            countSort(list, exp);
+
+        return list;
+    }
+
 }

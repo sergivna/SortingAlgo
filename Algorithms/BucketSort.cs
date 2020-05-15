@@ -7,6 +7,8 @@ namespace Algorithms
 {
    public class BucketSort : IAlgorithm
     {
+        public string Name { get; } = "BucketSort";
+
         public List<long> Sort(List<long> list)
         {
             long min = list.OrderBy(i => i).FirstOrDefault();
@@ -26,7 +28,7 @@ namespace Algorithms
                 for (int i = 0; i < list.Count; i++)
                 {
                     fraction =  (float)((float)(list[i] - min)/ divider);
-                    bi = (int)(fraction * list.Count); // Index in bucket 
+                    bi = (int)((fraction * list.Count)/(list.Count -1)); // Index in bucket 
                     buckets[bi].Add(list[i]);
                 }
 

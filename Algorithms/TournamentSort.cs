@@ -6,6 +6,8 @@ namespace Algorithms
 {
     public class TournamentSort: IAlgorithm
     {
+        public string Name { get; } = "TournamentSort";
+
         public List<long> Sort(List<long> list)
         {
             int num = list.Count;
