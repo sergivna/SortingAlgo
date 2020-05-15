@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Algorithms
 {
-    public class IntroSort: IAlgorithm
+    public class IntroSort : IAlgorithm
     {
         public string Name { get; } = "IntroSort";
 
@@ -90,30 +90,30 @@ namespace Algorithms
 
             if ((2 * i + 2) < size)
             {
-             
+
                 if (Array[2 * i + 1 + left] < Array[2 * i + 2 + left])
-     
+
                     imax = 2 * i + 2;
                 else
-        
+
                     imax = 2 * i + 1;
             }
-     
+
             else
-            
+
                 imax = 2 * i + 1;
-     
+
             if (imax >= size) return i;
-         
+
             if (Array[i + left] < Array[imax + left])
             {
-          
+
                 buf = Array[i + left];
                 Array[i + left] = Array[imax + left];
                 Array[imax + left] = buf;
 
                 if (imax < size / 2)
-            
+
                     i = imax;
             }
             return i;

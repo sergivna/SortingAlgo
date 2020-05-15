@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Visualization.Properties
+namespace Diagram.Properties
 {
 
 

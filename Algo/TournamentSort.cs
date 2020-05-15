@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Algorithms
 {
-    public class TournamentSort: IAlgorithm
+    public class TournamentSort : IAlgorithm
     {
         public string Name { get; } = "TournamentSort";
 

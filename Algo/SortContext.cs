@@ -9,7 +9,7 @@ namespace Algorithms
         private IAlgorithm algorithm;
 
         public SortContext()
-        {}
+        { }
 
         public SortContext(IAlgorithm algorithm)
         {

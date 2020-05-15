@@ -24,7 +24,8 @@ namespace RandomData
 
 
 
-        public List<List<List<long>>> GetData(){
+        public List<List<List<long>>> GetData()
+        {
             List<List<List<long>>> result = new List<List<List<long>>>();
 
             list30k1 = new List<List<long>>();
@@ -63,7 +64,7 @@ namespace RandomData
             //FillNormal(list30k2, 30000, (long)Math.Pow(2, 31));
             //FillNormal(list30k3, 30000, (long)Math.Pow(2, 31));
             FillNormal(list30k4, 30000, (long)Math.Pow(2, 31));
-           
+
 
             FillUniform(list100k1, 100000, (long)Math.Pow(2, 31));
             //FillUniform(list100k2, 100000, (long)Math.Pow(2, 31));
@@ -95,7 +96,7 @@ namespace RandomData
 
 
             FillUniform(list1m2, 1000000);
-   
+
 
 
             FillUniform(list1m3, 1000000, (long)Math.Pow(2, 15));
@@ -134,20 +135,20 @@ namespace RandomData
                 end = N - 1;
             long next = 0;
 
-                for (int i = 0; i < 5; i++)
+            for (int i = 0; i < 5; i++)
+            {
+                ls.Clear();
+
+                for (int j = 0; j < N; j++)
                 {
-                    ls.Clear();
-
-                    for (int j = 0; j < N; j++)
-                    {
-                        next = (long)(random.NextDouble() * end);
-                        ls.Add(next);
-                    }
-
-                    list.Add(ls);
+                    next = (long)(random.NextDouble() * end);
+                    ls.Add(next);
                 }
-            
-            
+
+                list.Add(ls);
+            }
+
+
         }
 
         private void FillNormal(List<List<long>> list, long N, long end = -1)

@@ -26,8 +26,8 @@ namespace RandomData
         /// <returns></returns>
         public double NextGaussian()
         {
-            double mu = Math.Pow(2,31)/2;
-            double sigma = Math.Sqrt(mu*mu/12);
+            double mu = Math.Pow(2, 31) / 2;
+            double sigma = Math.Sqrt(mu * mu / 12);
 
             if (sigma <= 0)
                 throw new ArgumentOutOfRangeException("sigma", "Must be greater than zero.");

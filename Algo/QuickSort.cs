@@ -5,13 +5,13 @@ using System.Text;
 
 namespace Algorithms
 {
-    public class QuickSort: IAlgorithm
+    public class QuickSort : IAlgorithm
     {
         public string Name { get; } = "QuickSort";
 
         public List<long> Sort(List<long> list)
         {
-            SortRecur(list, 0, list.Count-1);
+            SortRecur(list, 0, list.Count - 1);
             return list;
         }
 
@@ -32,7 +32,7 @@ namespace Algorithms
             int marker = start;
             for (int i = start; i < end; i++)
             {
-                if (array[i] < array[end]) 
+                if (array[i] < array[end])
                 {
                     temp = array[marker];
                     array[marker] = array[i];
@@ -40,7 +40,7 @@ namespace Algorithms
                     marker += 1;
                 }
             }
-     
+
             temp = array[marker];
             array[marker] = array[end];
             array[end] = temp;

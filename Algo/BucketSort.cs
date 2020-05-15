@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Algorithms
 {
-   public class BucketSort : IAlgorithm
+    public class BucketSort : IAlgorithm
     {
         public string Name { get; } = "BucketSort";
 
@@ -21,27 +21,27 @@ namespace Algorithms
             var buckets = new List<List<long>>();
             for (int i = 0; i < list.Count; i++)
             {
-                buckets.Add( new List<long>());
+                buckets.Add(new List<long>());
             }
 
-                // 2) Put array elements in different buckets 
-                for (int i = 0; i < list.Count; i++)
-                {
-                    fraction =  (float)((float)(list[i] - min)/ divider);
-                    bi = (int)((fraction * list.Count)/(list.Count -1)); // Index in bucket 
-                    buckets[bi].Add(list[i]);
-                }
+            // 2) Put array elements in different buckets 
+            for (int i = 0; i < list.Count; i++)
+            {
+                fraction = (float)((float)(list[i] - min) / divider);
+                bi = (int)((fraction * list.Count) / (list.Count - 1)); // Index in bucket 
+                buckets[bi].Add(list[i]);
+            }
 
             // 3) Sort individual buckets 
             for (int i = 0; i < list.Count; i++)
                 buckets[i].Sort();
 
-                // 4) Concatenate all buckets into arr[] 
-                int index = 0;
-                for (int i = 0; i < list.Count; i++)
-                    for (int j = 0; j < buckets[i].Count; j++)
-                        list[index++] = buckets[i][j];
-     
+            // 4) Concatenate all buckets into arr[] 
+            int index = 0;
+            for (int i = 0; i < list.Count; i++)
+                for (int j = 0; j < buckets[i].Count; j++)
+                    list[index++] = buckets[i][j];
+
             Console.WriteLine("BucketSort");
             return list;
         }
