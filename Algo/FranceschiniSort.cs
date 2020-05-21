@@ -1,4 +1,4 @@
-﻿// C# implementation of Radix Sort 
+﻿
 using Algorithms;
 using System;
 using System.Collections.Generic;

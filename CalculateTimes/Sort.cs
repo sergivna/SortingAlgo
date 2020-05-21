@@ -44,11 +44,10 @@ namespace CalculateTimes
                         clock.Stop();
 
                         time += clock.Elapsed;
-                        Console.WriteLine(" hh" + clock.Elapsed);
                         clock.Reset();
                     }
                     //var result = res.GroupBy(s => s).Select(g => new { Count = g.Count(), Str = g.Key }).OrderByDescending(a => a.Count).ToList();
-                    Console.WriteLine("hdfh" + time);
+                    Console.WriteLine("Time" + time);
                     keyValues.Add(new Result(algo.Name, listsByCount[0].Count, (i++) % 4 + 1, time));
                     time = TimeSpan.Zero;
                 }

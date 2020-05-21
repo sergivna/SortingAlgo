@@ -20,12 +20,17 @@ namespace Diagram
 
             List<Result> data = Sort.CalculateRealData();
 
+            Series BucketSort = new Series("Аналіз часу виконання алгоритмів сортування");
             Series ls = new Series("Аналіз часу виконання алгоритмів сортування");
-                   
+            Series ls2 = new Series("Аналіз часу виконання алгоритмів сортування");
 
-            foreach (var item in data)
+            var times = data.Where(a => a.Algo == "BucketSort");
+
+
+
+            foreach (var item in times)
             {
-                ls.Points.AddXY(item.Algo+item.Count+"Type"+item.Type, item.AverageTime.Seconds);
+                ls.Points.AddXY(item.Algo, item.AverageTime.Seconds);
             }
 
             chart1.Series.Add(ls);
