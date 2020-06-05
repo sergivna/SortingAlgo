@@ -13,10 +13,7 @@ namespace CalculateTimes
         {
 
             Rand rand = new Rand();
-            //List<List<List<long>>> data = rand.GetData();
-            List<List<long>> times = new List<List<long>>(4);
 
-            SortContext sortContext = new SortContext();
             List<Result> keyValues = new List<Result>();
 
             List<IAlgorithm> algorithms = new List<IAlgorithm>()

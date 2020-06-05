@@ -12,7 +12,6 @@ namespace AlgoSort
     {
         static void Main(string[] args)
         {
-            // List<long> ls = new List<long>(new long[] {  2, 3, 4, 4, 2, 8, 10, 0 });
             int writeToFile = 0;
 
             while (writeToFile != 1 && writeToFile != 2)
@@ -29,8 +28,7 @@ namespace AlgoSort
                 }
             }
 
-            List<Result> times = Sort.CalculateRealData();
-
+            List<Result> times = SortArrayAndList.CalculateTimes();
 
             foreach (var item in times)
             {
@@ -40,7 +38,6 @@ namespace AlgoSort
                 Console.Write(info);
 
             }
-
 
             if (writeToFile == 1)
                 WriteToFiles(times);
