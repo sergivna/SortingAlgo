@@ -48,7 +48,7 @@ namespace AlgoSort
         static void WriteToFiles(List<Result> list)
         {
             // запись в файл
-            using (FileStream fstream = new FileStream($"note.txt", FileMode.OpenOrCreate))
+            using (FileStream fstream = new FileStream($"result.txt", FileMode.OpenOrCreate))
             {
                 // преобразуем строку в байты
 
